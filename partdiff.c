@@ -201,7 +201,7 @@ static void calculate(struct calculation_arguments const *arguments,
     /* omp_set_num_threads(options->number) so kann Nutzer über argv[1] manuell Anzahl der Threads bestimmen */
     omp_set_num_threads(options->number);
     #pragma omp parallel for if (options->method == METH_JACOBI) default(none) private(i, j, residuum, star) shared(Matrix_In, Matrix_Out, N, fpisin, pih, options, term_iteration) reduction(max : maxResiduum)  
-    for if (options->method == METH_JACOBI)
+    // for if (options->method == METH_JACOBI)
     for (i = 1; i < N; i++) {
       double fpisin_i = 0.0;
 
